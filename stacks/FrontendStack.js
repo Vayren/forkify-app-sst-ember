@@ -6,7 +6,7 @@ export default class FrontendStack extends sst.Stack {
 
     // Define our Ember app
     const site = new sst.StaticSite(this, "Site", {
-      path: "frontend/app",
+      path: "frontend",
       buildOutput: "dist",
       buildCommand: "npm run build"
     });
