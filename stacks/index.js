@@ -6,7 +6,5 @@ export default function main(app) {
     runtime: "nodejs12.x"
   });
 
-  new FrontendStack(app, 'frontend', {});
-
-  // Add more stacks
+  new FrontendStack(app, 'frontend');
 }
