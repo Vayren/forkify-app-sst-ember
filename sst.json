@@ -1,6 +1,5 @@
 {
   "name": "forkify-app",
-  "stage": "prod",
   "region": "us-east-1",
   "main": "stacks/index.js"
 }
