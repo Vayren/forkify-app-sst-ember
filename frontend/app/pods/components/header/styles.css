@@ -1,0 +1,36 @@
+.header {
+  grid-area: head;
+  background-color: #F9F5F3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 4rem;
+  height: 4.5rem;
+  display: block;
+}
+
+.icons {
+  display: flex;
+  height: 100%;
+}
+
+.icon-link {
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: all .3s;
+}
+
+.icon-link:hover {
+  background-color: #F2EFEE;
+}
+
+.icon {
+  fill: #F59A83;
+  height: 3.75rem;
+  width: 3.75rem;
+}

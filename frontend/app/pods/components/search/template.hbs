@@ -1,0 +1,16 @@
+<form local-class="search" {{on 'submit' @onSubmit}}>
+  {{!-- template-lint-disable require-input-label --}}
+  <input
+    type="text"
+    local-class="field"
+    placeholder="Search over 1,000,000 recipes..."
+    value={{@value}}
+    {{on 'input' @onInput}}
+  >
+  <button type="submit" class="{{local-class 'btn' from="frontend/styles/buttons"}}">
+    <svg>
+      <use href="assets/images/icons.svg#icon-magnifying-glass"></use>
+    </svg>
+    <span>Search</span>
+  </button>
+</form>
