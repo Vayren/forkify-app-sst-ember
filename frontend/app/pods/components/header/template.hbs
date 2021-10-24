@@ -1,0 +1,18 @@
+<header local-class="header">
+  <LinkTo @route="recipes">
+    <img src="assets/images/logo.png" alt="Forkify-logo" local-class="logo">
+  </LinkTo>
+  {{yield}}
+  <div local-class="icons">
+    <LinkTo @route="wishlist" local-class="icon-link">
+      <svg local-class="icon">
+        <use href="assets/images/icons.svg#icon-heart"></use>
+      </svg>
+    </LinkTo>
+    <LinkTo @route="cart" local-class="icon-link">
+      <svg local-class="icon">
+        <use href="assets/images/icons.svg#icon-shopping-cart"></use>
+      </svg>
+    </LinkTo>
+  </div>
+</header>

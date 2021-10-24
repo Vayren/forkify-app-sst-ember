@@ -1,0 +1,11 @@
+{{page-title "Forkify"}}
+<div local-class="container">
+  <Header>
+    <Search
+      @value={{this.searchTerm}}
+      @onInput={{this.updateSearchTerm}}
+      @onSubmit={{this.handleSearchSubmit}}
+    />
+  </Header>
+  {{outlet}}
+</div>
