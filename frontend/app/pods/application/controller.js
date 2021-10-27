@@ -5,7 +5,6 @@ import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
   @service router;
-  @service pagination;
 
   @tracked searchTerm = '';
 
@@ -23,19 +22,12 @@ export default class ApplicationController extends Controller {
       return;
     }
 
-    // clear old recipe records
-    this.store.unloadAll('recipe');
-
-    await this.store.query('recipe', {
-      search: this.searchTerm,
+    this.router.transitionTo('recipes', {
+      queryParams: {
+        search: this.searchTerm,
+      },
     });
 
-    this.pagination.resetCurrentPage();
-
     this.searchTerm = '';
-
-    if (this.router.currentURL !== '/') {
-      this.router.transitionTo('recipes');
-    }
   }
 }

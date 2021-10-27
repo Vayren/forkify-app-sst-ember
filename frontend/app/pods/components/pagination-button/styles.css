@@ -1,20 +1,9 @@
-.pages {
-  margin-top: 3rem;
-  padding: 0 3rem;
-}
-
-.pages::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.btn--prev {
+.btn--left {
   float: left;
   flex-direction: row-reverse;
 }
 
-.btn--next {
+.btn--right {
   float: right;
 }
 

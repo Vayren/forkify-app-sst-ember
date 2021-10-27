@@ -1,31 +1,5 @@
 <ul>
-  {{#each this.currentRecipeList as |recipe|}}
+  {{#each @recipes as |recipe|}}
     <Recipe @recipe={{recipe}}/>
   {{/each}}
 </ul>
-<div local-class="pages">
-  {{#if this.showPrevButton}}
-    <button
-      type="button"
-      local-class="btn-inline btn--prev"
-      {{on 'click' this.goPrev}}
-    >
-      <svg>
-        <use href="assets/images/icons.svg#icon-triangle-left"></use>
-      </svg>
-      <span>Page {{this.prevPage}}</span>
-    </button>
-  {{/if}}
-  {{#if this.showNextButton}}
-    <button
-      type="button"
-      local-class="btn-inline btn--next"
-      {{on 'click' this.goNext}}
-    >
-      <span>Page {{this.nextPage}}</span>
-      <svg>
-        <use href="assets/images/icons.svg#icon-triangle-right"></use>
-      </svg>
-    </button>
-  {{/if}}
-</div>

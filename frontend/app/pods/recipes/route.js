@@ -1,14 +1,21 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
 
 export default class RecipesRoute extends Route {
-  @service pagination;
+  queryParams = {
+    search: {
+      refreshModel: true,
+    },
+  };
 
-  model() {
-    return this.store.peekAll('recipe');
+  model(params) {
+    return this.store.query('recipe', params);
   }
 
-  resetController() {
-    this.pagination.resetCurrentPage();
+  setupController(controller, model) {
+    controller.recipes = model;
+  }
+
+  resetController(controller) {
+    controller.currentPage = 1;
   }
 }
