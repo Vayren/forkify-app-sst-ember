@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
   @service router;
+  @service pagination;
 
   @tracked searchTerm = '';
 
@@ -14,7 +15,7 @@ export default class ApplicationController extends Controller {
   }
 
   @action
-  handleSearchSubmit(event) {
+  async handleSearchSubmit(event) {
     event.preventDefault();
 
     if (!this.searchTerm.trim().length) {
@@ -22,7 +23,15 @@ export default class ApplicationController extends Controller {
       return;
     }
 
-    //TODO: make a request to API with q=searchTerm
+    // clear old recipe records
+    this.store.unloadAll('recipe');
+
+    await this.store.query('recipe', {
+      search: this.searchTerm,
+    });
+
+    this.pagination.resetCurrentPage();
+
     this.searchTerm = '';
 
     if (this.router.currentURL !== '/') {
