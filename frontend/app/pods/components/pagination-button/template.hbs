@@ -1,0 +1,10 @@
+<button
+  type="button"
+  local-class="btn-inline btn--{{@arrow}}"
+  {{on 'click' @onClick}}
+>
+  <span>Page {{@pageNum}}</span>
+  <svg>
+    <use href={{concat "assets/images/icons.svg#icon-triangle-" @arrow}}></use>
+  </svg>
+</button>

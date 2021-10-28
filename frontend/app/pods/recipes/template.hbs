@@ -1,1 +1,20 @@
+<div local-class="results">
+  <RecipeList @recipes={{this.currentRecipeList}}/>
+  <div local-class="pages">
+    {{#if this.showPrevButton}}
+      <PaginationButton
+        @onClick={{this.goPrev}}
+        @pageNum={{this.prevPage}}
+        @arrow="left"
+      />
+    {{/if}}
+    {{#if this.showNextButton}}
+      <PaginationButton
+        @onClick={{this.goNext}}
+        @pageNum={{this.nextPage}}
+        @arrow="right"
+      />
+    {{/if}}
+  </div>
+</div>
 {{outlet}}

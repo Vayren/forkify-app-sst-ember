@@ -14,7 +14,7 @@ export default class ApplicationController extends Controller {
   }
 
   @action
-  handleSearchSubmit(event) {
+  async handleSearchSubmit(event) {
     event.preventDefault();
 
     if (!this.searchTerm.trim().length) {
@@ -22,11 +22,12 @@ export default class ApplicationController extends Controller {
       return;
     }
 
-    //TODO: make a request to API with q=searchTerm
-    this.searchTerm = '';
+    this.router.transitionTo('recipes', {
+      queryParams: {
+        search: this.searchTerm,
+      },
+    });
 
-    if (this.router.currentURL !== '/') {
-      this.router.transitionTo('recipes');
-    }
+    this.searchTerm = '';
   }
 }
