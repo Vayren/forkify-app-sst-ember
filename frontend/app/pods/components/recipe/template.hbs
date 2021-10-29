@@ -1,11 +1,7 @@
-<li>
-  <LinkTo @route="recipes.recipe" local-class="link" @model={{@recipe.id}}>
-    <figure local-class="image">
-      <img src={{@recipe.imageUrl}} alt={{@recipe.title}}>
-    </figure>
-    <div local-class="data">
-      <h4 local-class="name">{{limit-recipe-title @recipe.title}}</h4>
-      <p local-class="author">{{@recipe.publisher}}</p>
-    </div>
-  </LinkTo>
-</li>
+{{page-title "Recipe"}}
+<div local-class="recipe">
+  <Recipe::Image @url={{@recipe.imageUrl}} @title={{@recipe.title}}/>
+  <Recipe::Details @servings={{@recipe.servings}} @time={{@recipe.cookingTime}}/>
+  <Recipe::Ingredients @ingredients={{@recipe.ingredients}}/>
+  <Recipe::Footer @author={{@recipe.publisher}} @url={{@recipe.sourceUrl}}/>
+</div>

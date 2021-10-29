@@ -24,3 +24,17 @@ body {
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
 }
+
+:global(.heading-2) {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #F59A83;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  transform: skewY(-3deg);
+}
+
+:global(.active) {
+  background-color: #F9F5F3;
+}

@@ -1,0 +1,21 @@
+.ingredient {
+  display: flex;
+}
+
+.icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  fill: #F59A83;
+  border: 1px solid #F59A83;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 1rem;
+  flex: 0 0 auto;
+  margin-top: .1rem;
+}
+
+.count {
+  margin-right: .5rem;
+  flex: 0 0 auto;
+}
+

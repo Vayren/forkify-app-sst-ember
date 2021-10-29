@@ -1,9 +1,12 @@
-.btn {
+:global(.btn) {
   padding: 1.3rem 3rem;
   font-size: 1.4rem;
 }
 
-.btn, .btn-small, .btn-small:link, .btn-small:visited {
+:global(.btn),
+:global(.btn-small),
+:global(.btn-small:link),
+:global(.btn-small:visited) {
   background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
   border-radius: 10rem;
   border: none;
@@ -15,20 +18,73 @@
   transition: all .2s;
 }
 
-.btn:hover, .btn-small:hover {
+:global(.btn:hover),
+:global(.btn-small:hover) {
   transform: scale(1.05);
 }
 
-.btn:focus, .btn-small:focus {
+:global(.btn:focus),
+:global(.btn-small:focus) {
   outline: none;
 }
 
-.btn > *:first-child, .btn-small > *:first-child {
+:global(.btn > *:first-child),
+:global(.btn-small > *:first-child) {
   margin-right: 1rem;
 }
 
-.btn svg {
+:global(.btn svg) {
   height: 2.25rem;
   width: 2.25rem;
   fill: currentColor;
 }
+
+:global(.btn-small),
+:global(.btn-small:link),
+:global(.btn-small:visited) {
+  font-size: 1.3rem;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+}
+
+:global(.btn-small svg),
+:global(.btn-small:link svg),
+:global(.btn-small:visited svg){
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: currentColor;
+}
+
+:global(.btn-inline) {
+  color: #F59A83;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #F9F5F3;
+  padding: .8rem 1.2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all .2s;
+}
+
+:global(.btn-inline svg) {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: currentColor;
+  margin: 0 .2rem;
+}
+
+:global(.btn-inline span) {
+  margin: 0 .4rem;
+}
+
+:global(.btn-inline:hover) {
+  color: #F48982;
+  background-color: #F2EFEE;
+}
+
+:global(.btn-inline:focus) {
+  outline: none;
+}
+
