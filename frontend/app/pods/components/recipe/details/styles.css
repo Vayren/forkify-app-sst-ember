@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 4rem 3rem 3rem 3rem;
+}
+
+.info {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.info:not(:last-child) {
+  margin-right: 4rem;
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  fill: #F59A83;
+  margin-right: 1rem;
+}
+
+.info-data {
+  margin-right: .4rem;
+  font-weight: 600;
+}
+
+.like-button {
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  height: 4.5rem;
+  width: 4.5rem;
+  margin-left: auto;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button:hover {
+  transform: scale(1.07);
+}
+
+.like-button:focus {
+  outline: none;
+}
+
+.like-button svg {
+  height: 2.75rem;
+  width: 2.75rem;
+  fill: #fff;
+}
