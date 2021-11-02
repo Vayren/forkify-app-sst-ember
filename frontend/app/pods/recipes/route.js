@@ -11,6 +11,13 @@ export default class RecipesRoute extends Route {
     return this.store.query('recipe', params);
   }
 
+  async redirect(model) {
+    const { id } = model.get('firstObject');
+    const firstRecipe = await this.store.findRecord('recipe', id);
+
+    this.transitionTo('recipes.recipe', firstRecipe);
+  }
+
   setupController(controller, model) {
     controller.recipes = model;
   }
