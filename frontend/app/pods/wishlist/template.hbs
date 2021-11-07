@@ -1,2 +1,28 @@
-<h1>Wishlist template</h1>
-{{outlet}}
+<div>
+  <h2 local-class="title"><span>Wishlist</span></h2>
+  {{#each-in this.categories as |title items|}}
+    <CollapsibleIf
+      local-class="container"
+      as |collapsible|
+    >
+      <collapsible.Title>{{capitalize title}}</collapsible.Title>
+      <collapsible.Content>
+        <div
+          local-class="grid"
+          {{css-transition
+            enterClass=(local-class "enter")
+            enterActiveClass=(local-class "enter-active")
+            enterToClass=(local-class "enter-to")
+            leaveClass=(local-class "leave")
+            leaveActiveClass=(local-class "leave-active")
+            leaveToClass=(local-class "leave-to")
+          }}
+        >
+          {{#each items as |item|}}
+            <WishlistItem @recipe={{item}} @category={{title}} @remove={{fn this.removeFromWishlist item.id}}/>
+          {{/each}}
+        </div>
+      </collapsible.Content>
+    </CollapsibleIf>
+  {{/each-in}}
+</div>

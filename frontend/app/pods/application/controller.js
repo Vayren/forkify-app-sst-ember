@@ -22,6 +22,14 @@ export default class ApplicationController extends Controller {
       return;
     }
 
+    const currentSearchQuery = this.router.currentRoute.queryParams.search;
+
+    if (currentSearchQuery === this.searchTerm) {
+      this.searchTerm = '';
+
+      return;
+    }
+
     this.router.transitionTo('recipes', {
       queryParams: {
         search: this.searchTerm,

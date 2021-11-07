@@ -1,7 +1,12 @@
-{{page-title "Recipe"}}
 <div local-class="recipe">
   <Recipe::Image @url={{@recipe.imageUrl}} @title={{@recipe.title}}/>
-  <Recipe::Details @servings={{@recipe.servings}} @time={{@recipe.cookingTime}}/>
+  <Recipe::Details
+    @servings={{@recipe.servings}}
+    @time={{@recipe.cookingTime}}
+    @addToWishlist={{this.add}}
+    @removeFromWishlist={{this.remove}}
+    @findRecipe={{this.find}}
+  />
   <Recipe::Ingredients @ingredients={{@recipe.ingredients}}/>
   <Recipe::Footer @author={{@recipe.publisher}} @url={{@recipe.sourceUrl}}/>
 </div>

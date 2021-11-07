@@ -1,0 +1,7 @@
+<div ...attributes>
+  {{yield (
+    hash
+      Title=(component 'collapsible-if/title' toggleContent=this.toggleContent)
+      Content=(component 'collapsible-if/content' isVisible=this.isVisible)
+  )}}
+</div>
