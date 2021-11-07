@@ -1,0 +1,48 @@
+.container {
+  padding: 4rem 5rem 0;
+}
+
+.title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.75rem;
+  text-transform: uppercase;
+  line-height: 1.95;
+  margin-top: 3rem;
+  margin-left: 6rem;
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  transform: skew(-20deg);
+  display: inline-block;
+}
+
+.title span {
+  display: inline-block;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: .2rem 5rem;
+  transform: skew(20deg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  grid-template-rows: auto;
+  padding-left: 3rem;
+}
+
+.enter,
+.leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+
+.enter-active,
+.leave-active {
+  transition: all .5s ease-in-out;
+}
+
+.enter-to,
+.leave {
+  opacity: 100;
+  max-height: 100vh;
+}

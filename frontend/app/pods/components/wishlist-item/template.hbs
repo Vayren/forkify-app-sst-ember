@@ -1,0 +1,16 @@
+<div local-class="container">
+  <LinkTo @route="recipes.recipe" @model={{@recipe.id}} @query={{hash search=@category}} local-class="link">
+    <figure local-class="image">
+      <img src={{@recipe.imageUrl}} alt={{@recipe.title}}>
+    </figure>
+    <div>
+      <h4 local-class="name">{{@recipe.title}}</h4>
+      <p local-class="author">{{@recipe.publisher}}</p>
+    </div>
+  </LinkTo>
+  <button local-class="icon" type="button" {{on 'click' @remove}}>
+    <svg>
+      <use href="/assets/images/icons.svg#icon-heart"></use>
+    </svg>
+  </button>
+</div>

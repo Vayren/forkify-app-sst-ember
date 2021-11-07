@@ -13,9 +13,9 @@
     <span local-class="info-data">{{@servings}}</span>
     <span> servings</span>
   </div>
-  <button local-class="like-button" type="button">
+  <button local-class="like-button" type="button" {{on 'click' this.onLikeHandler}}>
     <svg>
-      <use href="/assets/images/icons.svg#icon-heart-outlined"></use>
+      <use href="/assets/images/icons.svg#icon-heart{{if this.fullIcon '' '-outlined'}}"></use>
     </svg>
   </button>
 </div>
