@@ -2,6 +2,6 @@
   {{yield (
     hash
       Title=(component 'collapsible-if/title' toggleContent=this.toggleContent)
-      Content=(component 'collapsible-if/content' isVisible=this.isVisible)
+      Content=(component 'collapsible-if/content' isVisible=this.isVisible animation=this.fade isAnimating=this.isAnimating)
   )}}
 </div>

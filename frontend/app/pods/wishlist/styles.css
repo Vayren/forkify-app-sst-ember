@@ -29,20 +29,3 @@
   grid-template-rows: auto;
   padding-left: 3rem;
 }
-
-.enter,
-.leave-to {
-  opacity: 0;
-  max-height: 0;
-}
-
-.enter-active,
-.leave-active {
-  transition: all .5s ease-in-out;
-}
-
-.enter-to,
-.leave {
-  opacity: 100;
-  max-height: 100vh;
-}
