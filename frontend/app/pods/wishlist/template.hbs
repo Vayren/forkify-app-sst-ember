@@ -7,17 +7,7 @@
     >
       <collapsible.Title>{{capitalize title}}</collapsible.Title>
       <collapsible.Content>
-        <div
-          local-class="grid"
-          {{css-transition
-            enterClass=(local-class "enter")
-            enterActiveClass=(local-class "enter-active")
-            enterToClass=(local-class "enter-to")
-            leaveClass=(local-class "leave")
-            leaveActiveClass=(local-class "leave-active")
-            leaveToClass=(local-class "leave-to")
-          }}
-        >
+        <div local-class="grid">
           {{#each items as |item|}}
             <WishlistItem @recipe={{item}} @category={{title}} @remove={{fn this.removeFromWishlist item.id}}/>
           {{/each}}
