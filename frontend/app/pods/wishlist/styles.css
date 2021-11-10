@@ -25,7 +25,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  grid-template-columns: repeat(auto-fit, 50%);
   grid-template-rows: auto;
   padding-left: 3rem;
 }
