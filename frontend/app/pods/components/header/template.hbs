@@ -1,15 +1,15 @@
-<header local-class="header">
+<header local-class="header" class="qa-header">
   <LinkTo @route="index">
-    <img src="/assets/images/logo.png" alt="Forkify-logo" local-class="logo">
+    <img src="/assets/images/logo.png" alt="Forkify-logo" local-class="logo" class="qa-logo">
   </LinkTo>
   {{yield}}
   <div local-class="icons">
-    <LinkTo @route="wishlist" local-class="icon-link">
+    <LinkTo @route="wishlist" local-class="icon-link" class="qa-wishlist-icon">
       <svg local-class="icon">
         <use href="/assets/images/icons.svg#icon-heart"></use>
       </svg>
     </LinkTo>
-    <LinkTo @route="cart" local-class="icon-link">
+    <LinkTo @route="cart" local-class="icon-link" class="qa-cart-icon">
       <svg local-class="icon">
         <use href="/assets/images/icons.svg#icon-shopping-cart"></use>
       </svg>

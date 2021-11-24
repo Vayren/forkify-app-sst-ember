@@ -3,15 +3,14 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Helper | capitalize', function(hooks) {
+module('Integration | Helper | capitalize', function (hooks) {
   setupRenderingTest(hooks);
 
-  // TODO: Replace this with your real tests.
-  test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+  test('it makes first letter capital', async function (assert) {
+    this.title = 'test';
 
-    await render(hbs`{{capitalize inputValue}}`);
+    await render(hbs`{{capitalize this.title}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'Test');
   });
 });

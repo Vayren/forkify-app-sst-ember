@@ -1,14 +1,23 @@
-<div local-class="container">
-  <LinkTo @route="recipes.recipe" @model={{@recipe.id}} @query={{hash search=@category}} local-class="link">
+<div local-class="container" class="qa-wishlist-item">
+  <LinkTo @route="recipes.recipe" @model={{@recipe.id}} @query={{hash search=@category}} class="qa-wishlist-link" local-class="link">
     <figure local-class="image">
-      <img src={{@recipe.imageUrl}} alt={{@recipe.title}}>
+      <img
+        class="qa-wishlist-item-image"
+        src={{@recipe.imageUrl}}
+        alt={{@recipe.title}}
+      >
     </figure>
     <div>
-      <h4 local-class="name">{{@recipe.title}}</h4>
-      <p local-class="author">{{@recipe.publisher}}</p>
+      <h4 local-class="name" class="qa-wishlist-item-title">{{@recipe.title}}</h4>
+      <p local-class="author" class="qa-wishlist-item-publisher">{{@recipe.publisher}}</p>
     </div>
   </LinkTo>
-  <button local-class="icon" type="button" {{on 'click' @remove}}>
+  <button
+    class="qa-wishlist-item-like-button"
+    local-class="icon"
+    type="button"
+    {{on 'click' @remove}}
+  >
     <svg>
       <use href="/assets/images/icons.svg#icon-heart"></use>
     </svg>
