@@ -1,11 +1,15 @@
-<li>
-  <LinkTo @route="recipes.recipe" local-class="link" @model={{@recipe.id}}>
+<li class="qa-recipe-inline">
+  <LinkTo @route="recipes.recipe" class="qa-recipe-inline-link" local-class="link" @model={{@recipe.id}}>
     <figure local-class="image">
-      <img src={{@recipe.imageUrl}} alt={{@recipe.title}}>
+      <img
+        class="qa-recipe-inline-image"
+        src={{@recipe.imageUrl}}
+        alt={{@recipe.title}}
+      >
     </figure>
     <div>
-      <h4 local-class="name">{{limit-recipe-title @recipe.title}}</h4>
-      <p local-class="author">{{@recipe.publisher}}</p>
+      <h4 class="qa-recipe-inline-title" local-class="name">{{reduce-title @recipe.title}}</h4>
+      <p class="qa-recipe-inline-publisher" local-class="author">{{@recipe.publisher}}</p>
     </div>
   </LinkTo>
 </li>

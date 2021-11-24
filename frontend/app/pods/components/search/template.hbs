@@ -1,13 +1,14 @@
-<form local-class="search" {{on 'submit' @onSubmit}}>
+<form local-class="search" {{on 'submit' @onSubmit}} class="qa-search-form">
   {{!-- template-lint-disable require-input-label --}}
   <input
     type="text"
     local-class="field"
+    class="qa-search-field"
     placeholder="Search over 1,000,000 recipes..."
     value={{@value}}
     {{on 'input' @onInput}}
   >
-  <button type="submit" class="btn">
+  <button type="submit" class="btn qa-submit-search">
     <svg>
       <use href="/assets/images/icons.svg#icon-magnifying-glass"></use>
     </svg>

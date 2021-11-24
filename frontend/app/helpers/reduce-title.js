@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 
-export default helper(function limitRecipeTitle([title, limit = 27]) {
+export default helper(function reduceTitle([title, limit = 27]) {
   const newTitle = [];
 
   if (title.length > limit) {

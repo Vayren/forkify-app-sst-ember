@@ -10,8 +10,8 @@ export default class RecipesRoute extends Route {
 
   @service router;
 
-  model(params) {
-    return this.store.query('recipe', params);
+  async model(params) {
+    return await this.store.query('recipe', params);
   }
 
   async redirect(model, transition) {

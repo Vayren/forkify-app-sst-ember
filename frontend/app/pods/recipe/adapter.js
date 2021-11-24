@@ -1,9 +1,6 @@
-import RESTAdapter from '@ember-data/adapter/rest';
+import ApplicationAdapter from 'frontend/pods/application/adapter';
 
-export default class RecipeAdapter extends RESTAdapter {
-  host = 'https://forkify-api.herokuapp.com';
-  namespace = 'api/v2';
-
+export default class RecipeAdapter extends ApplicationAdapter {
   shouldReloadRecord() {
     return true;
   }
