@@ -6,17 +6,19 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | Header', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
+  test('it renders header for non-block usage', async function (assert) {
     await render(hbs`<Header />`);
 
     assert.dom('.qa-header').exists();
   });
 
-  test('it renders children component', async function (assert) {
+  test('it renders header for block usage', async function (assert) {
     await render(hbs`
-      <Header>text</Header>
+      <Header>
+        header block text
+      </Header>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'text');
+    assert.equal(this.element.textContent.trim(), 'header block text');
   });
 });

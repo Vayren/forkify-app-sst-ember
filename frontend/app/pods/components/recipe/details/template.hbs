@@ -1,16 +1,16 @@
-<div local-class="container">
+<div local-class="container" class="qa-recipe-details">
   <div local-class="info">
     <svg local-class="icon">
       <use href="/assets/images/icons.svg#icon-stopwatch"></use>
     </svg>
-    <span local-class="info-data">{{@time}}</span>
+    <span class="qa-cooking-time" local-class="info-data">{{@time}}</span>
     <span> minutes</span>
   </div>
   <div local-class="info">
     <svg local-class="icon">
       <use href="/assets/images/icons.svg#icon-man"></use>
     </svg>
-    <span local-class="info-data">{{@servings}}</span>
+    <span class="qa-recipe-servings" local-class="info-data">{{@servings}}</span>
     <span> servings</span>
   </div>
   <button class="qa-like-button" local-class="like-button" type="button" {{on 'click' this.onLikeHandler}}>
