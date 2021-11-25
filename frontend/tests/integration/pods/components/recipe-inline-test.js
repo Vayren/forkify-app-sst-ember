@@ -17,11 +17,6 @@ module('Integration | Component | RecipeInline', function (hooks) {
     await render(hbs`<RecipeInline @recipe={{this.recipe}} />`);
 
     assert.dom('.qa-recipe-inline').exists();
-  });
-
-  test('it renders recipe-inline details', async function (assert) {
-    await render(hbs`<RecipeInline @recipe={{this.recipe}} />`);
-
     assert
       .dom('.qa-recipe-inline-image')
       .hasAttribute('src', this.recipe.imageUrl);
