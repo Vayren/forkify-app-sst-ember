@@ -1,4 +1,3 @@
 import Route from '@ember/routing/route';
 
-export default class WishlistRoute extends Route {
-}
+export default class WishlistRoute extends Route {}

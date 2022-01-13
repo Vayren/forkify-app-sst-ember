@@ -9,20 +9,22 @@ module('Acceptance | Recipe list', function (hooks) {
   setupMirage(hooks);
 
   hooks.beforeEach(async function () {
-    this.recipes = this.server.createList('recipe', 10);
+    this.recipes = this.server.createList('recipe', 20);
 
     await visit('/');
 
     await loadRecipes('pasta');
   });
 
-  test('it displays recipeID in the URL when loads recipe', async function (assert) {
-    const { id } = this.recipes[0];
-
-    assert.equal(currentURL(), `/recipes/${id}?search=pasta`);
+  test('it loads recipes', async function (assert) {
+    assert.dom('.qa-recipe-list').exists();
+    assert.dom('.qa-recipe-inline').exists({ count: 10 });
+    assert.ok(currentURL().includes('search=pasta'));
   });
 
-  test('it displays appropriate recipe details when user selects different inline-recipes', async function (assert) {
+  // TODO: write test for pagination
+
+  test('it displays recipe details', async function (assert) {
     const { id: firstId, title: firstTitle } = this.recipes[0];
     const { id: thirdId, title: thirdTitle } = this.recipes[2];
 

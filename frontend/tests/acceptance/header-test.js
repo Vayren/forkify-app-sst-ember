@@ -13,7 +13,7 @@ module('Acceptance | Header', function (hooks) {
   setupApplicationTest(hooks);
   setupMirage(hooks);
 
-  test('it redirects to index route', async function (assert) {
+  test('it redirects to the main page', async function (assert) {
     this.server.createList('recipe', 10);
 
     await visit('/');

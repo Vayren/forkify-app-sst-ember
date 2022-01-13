@@ -27,29 +27,24 @@ module('Acceptance | Wishlist', function (hooks) {
     localStorage.clear();
   });
 
-  test('it adds recipes to wishlist', async function (assert) {
+  test('it adds recipe to wishlist', async function (assert) {
     await visit('/wishlist');
 
+    assert.ok(currentRouteName(), 'recipes.recipe');
     assert.dom('.qa-wishlist-item').exists();
   });
 
-  test('it redirects to recipe page', async function (assert) {
+  test('it visits recipe page from wishlist', async function (assert) {
+    const recipeId = this.recipe[0].id;
+
     await visit('/wishlist');
 
     await click('.qa-wishlist-link');
 
-    assert.ok(currentRouteName(), 'recipes.recipe');
+    assert.equal(currentURL(), `/recipes/${recipeId}?search=pasta`);
   });
 
-  test('it shows search param in the URL', async function (assert) {
-    await visit('/wishlist');
-
-    await click('.qa-wishlist-link');
-
-    assert.ok(currentURL().includes('search=pasta'));
-  });
-
-  test('it removes item from wishlist', async function (assert) {
+  test('it removes recipe from wishlist', async function (assert) {
     await visit('/wishlist');
 
     await click('.qa-wishlist-item-like-button');
@@ -58,7 +53,7 @@ module('Acceptance | Wishlist', function (hooks) {
     assert.equal(localStorage.getItem('wishlist'), JSON.stringify({}));
   });
 
-  test('it removes title category if category is empty', async function (assert) {
+  test('it removes category if it is empty', async function (assert) {
     await visit('/wishlist');
 
     await click('.qa-wishlist-item-like-button');
