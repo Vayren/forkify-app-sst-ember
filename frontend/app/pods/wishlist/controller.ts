@@ -1,15 +1,21 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
+import type WishlistService from './service';
+import { LocalStorageRecipe } from './service';
+
+interface RecipeCategories {
+  [category: string]: LocalStorageRecipe[];
+}
 
 export default class WishlistController extends Controller {
-  @service wishlist;
+  @service declare wishlist: WishlistService;
 
-  get categories() {
-    const categories = {};
+  get categories(): RecipeCategories {
+    const categories: RecipeCategories = {};
     const recipes = Object.values(this.wishlist.recipes);
 
-    recipes.reduce((acc, curr) => {
+    recipes.reduce((acc, curr: LocalStorageRecipe) => {
       const category = acc[curr.category];
 
       if (category) {
@@ -25,7 +31,7 @@ export default class WishlistController extends Controller {
   }
 
   @action
-  removeFromWishlist(id) {
+  removeFromWishlist(id: string): void {
     this.wishlist.remove(id);
   }
 }

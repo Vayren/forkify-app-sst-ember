@@ -6,7 +6,7 @@ declare module 'ember-data/types/registries/model' {
   }
 }
 
-interface Ingredient {
+export interface Ingredient {
   quantity: number;
   unit: string;
   description: string;
